@@ -21,9 +21,9 @@
    <vtailarea unit="M2">5.0</vtailarea>
    <vtailarm unit="M">5.0</vtailarm>
    <location name="AERORP" unit="M">
-     <x> 0.85</x>
+     <x> 1.00</x>
      <y> 0.00</y>
-     <z> 0.00</z>
+     <z>-0.20</z>
    </location>
    <location name="EYEPOINT" unit="M">
      <x>0.23</x>
@@ -45,16 +45,16 @@
    <location name="CG" unit="M">
      <x> 0.90</x>
      <y> 0.00</y>
-     <z> 0.00</z>
+     <z>-0.30</z>
    </location>
 
    <pointmass name="Payload">
      <description>Pilot</description>
      <weight unit="LBS">180</weight>
      <location name="POINTMASS" unit="M">
-       <x>0.23</x>
+       <x> 0.25</x>
        <y>-0.13</y>
-       <z>0.50</z>
+       <z> 0.50</z>
      </location>
    </pointmass>
 
@@ -107,6 +107,36 @@
      <damping_coeff unit="LBS/FT/SEC">1000.00</damping_coeff>
      <max_steer unit="DEG">0</max_steer>
      <brake_group>RIGHT</brake_group>
+     <retractable>0</retractable>
+   </contact>
+
+   <contact type="STRUCTURE" name="LEFT_GROUND">
+     <location unit="M">
+       <x> 2.5</x>
+       <y>-2.15</y>
+       <z>-1.8</z>
+     </location>
+     <static_friction>0.2</static_friction>
+     <dynamic_friction>0.2</dynamic_friction>
+     <max_steer unit="DEG">0</max_steer>
+     <spring_coeff unit="LBS/FT">90000</spring_coeff>
+     <damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
+     <brake_group>NONE</brake_group>
+     <retractable>0</retractable>
+   </contact>
+
+   <contact type="STRUCTURE" name="RIGHT_GROUND">
+     <location unit="M">
+       <x> 2.5</x>
+       <y> 2.15</y>
+       <z>-1.8</z>
+     </location>
+     <static_friction>0.2</static_friction>
+     <dynamic_friction>0.2</dynamic_friction>
+     <max_steer unit="DEG">0</max_steer>
+     <spring_coeff unit="LBS/FT">90000</spring_coeff>
+     <damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
+     <brake_group>NONE</brake_group>
      <retractable>0</retractable>
    </contact>
 
@@ -292,14 +322,19 @@
          <property>metrics/Sw-sqft</property>
          <table>
            <independentVar lookup="row">aero/alpha-rad</independentVar>
+           <independentVar lookup="column">velocities/mach</independentVar>
            <tableData>
-              -0.20 -0.650
-               0.00  0.200
-               0.05  2.000
-               0.20  3.200
-               0.60  3.100
+                     0.08  0.60
+              -1.57 -1.30 -1.50
+              -0.26 -0.80 -0.80
+               0.00 -0.08 -0.04
+               0.05  0.37  0.37
+               0.31  0.60  0.57
+               0.52  1.00  1.00
+               1.57  1.30  1.50
            </tableData>
          </table>
+         <value>5.0</value>
        </product>
      </function>
 
@@ -330,18 +365,21 @@
      <function name="aero/force/Drag_basic">
        <description>Drag at zero lift</description>
        <product>
-         <property>aero/qbar-psf</property>
-         <property>metrics/Sw-sqft</property>
          <table>
            <independentVar lookup="row">aero/alpha-rad</independentVar>
+           <independentVar lookup="column">velocities/mach</independentVar>
            <tableData>
-              -1.57  2.000
-              -0.26  0.300
-               0.00  0.100
-               0.26  0.400
-               1.57  2.500
+                     0.080  0.600
+              -1.57  1.000  1.800
+              -0.26 -0.050 -0.050
+               0.00 -0.075 -0.080
+               0.17 -0.045 -0.045
+               0.43  0.002  0.020
+               0.52  0.035  0.070
+               1.57  0.850  2.200
            </tableData>
          </table>
+         <value>8.0</value>
        </product>
      </function>
 
@@ -437,12 +475,16 @@
      <function name="aero/moment/Roll_yaw">
        <description>Roll moment due to yaw rate</description>
        <product>
-         <property>aero/qbar-psf</property>
-         <property>metrics/Sw-sqft</property>
-         <property>metrics/bw-ft</property>
-         <property>aero/bi2vel</property>
-         <property>velocities/r-aero-rad_sec</property>
-         <value>0.15</value>
+         <table>
+           <independentVar lookup="row">aero/alpha-rad</independentVar>
+           <tableData>
+               0.00  0.50
+               0.17  0.80
+               0.28  0.60
+               0.43  1.5
+               0.50  4.5
+           </tableData>
+         </table>
        </product>
      </function>
 
@@ -475,10 +517,18 @@
      <function name="aero/moment/Pitch_alpha">
        <description>Pitch moment due to alpha</description>
        <product>
-         <property>aero/qbar-psf</property>
-         <property>metrics/Sw-sqft</property>
-         <property>metrics/cbarw-ft</property>
-         <property>aero/alpha-rad</property>
+         <table>
+           <independentVar lookup="row">aero/alpha-rad</independentVar>
+           <independentVar lookup="column">velocities/mach</independentVar>
+           <tableData>
+                    0.080  0.600
+             -0.26  0.050  0.055
+              0.00  0.025  0.028
+              0.26 -0.008  0.000
+              0.43 -0.014 -0.018
+              0.52 -0.050 -0.020
+           </tableData>
+         </table>
          <value>-0.5</value>
        </product>
      </function>
