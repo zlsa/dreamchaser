@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <fx>
+
+    <wind>
+      <name>wind</name>
+      <mode>looped</mode>
+      <path>Sounds/wind.wav</path>
+      <property>sim/current-view/internal</property>
+      <volume>
+	<property>velocities/airspeed-kt</property>
+	<factor>0.001</factor>
+	<min>0.01</min>
+	<max>0.4</max>
+      </volume>
+    </wind>
+
+    <rattle>
+      <name>rattle</name>
+      <mode>looped</mode>
+      <path>Sounds/rattleroll.wav</path>
+      <condition>
+        <and>
+          <or>
+            <property>gear/gear[0]/wow</property>
+            <property>gear/gear[1]/wow</property>
+            <property>gear/gear[2]/wow</property>
+          </or>
+          <property>sim/current-view/internal</property>
+        </and>
+      </condition>
+      <volume>
+	<property>velocities/groundspeed-kt</property>
+	<factor>0.02</factor>
+	<min>0.01</min>
+	<max>0.5</max>
+      </volume>
+    </rattle>
+
+    <touchdown>
+      <name>nose</name>
+      <mode>once</mode>
+      <path>Sounds/squeal.wav</path>
+      <property>gear/gear[0]/wow</property>
+      <volume>
+	<property>velocities/groundspeed-kt</property>
+	<factor>0.02</factor>
+	<min>0.01</min>
+	<max>0.5</max>
+      </volume>
+      <volume>
+	<property>velocities/speed-down-fps</property>
+	<factor>0.1</factor>
+	<min>0.01</min>
+	<max>0.5</max>
+      </volume>
+    </touchdown>
+
+    <touchdown>
+      <name>left</name>
+      <mode>once</mode>
+      <path>Sounds/squeal.wav</path>
+      <property>gear/gear[1]/wow</property>
+      <volume>
+	<property>velocities/groundspeed-kt</property>
+	<factor>0.02</factor>
+	<min>0.01</min>
+	<max>0.5</max>
+      </volume>
+      <volume>
+	<property>velocities/speed-down-fps</property>
+	<factor>0.1</factor>
+	<min>0.01</min>
+	<max>0.5</max>
+      </volume>
+    </touchdown>
+
+    <touchdown>
+      <name>right</name>
+      <mode>once</mode>
+      <path>Sounds/squeal.wav</path>
+      <property>gear/gear[2]/wow</property>
+      <volume>
+	<property>velocities/groundspeed-kt</property>
+	<factor>0.02</factor>
+	<min>0.01</min>
+	<max>0.5</max>
+      </volume>
+      <volume>
+	<property>velocities/speed-down-fps</property>
+	<factor>0.1</factor>
+	<min>0.01</min>
+	<max>0.5</max>
+      </volume>
+    </touchdown>
+
+  </fx>
+  
+</PropertyList>
