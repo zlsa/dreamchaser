@@ -12,16 +12,16 @@
  </fileheader>
 
  <metrics>
-   <wingarea unit="M2">40.0</wingarea>
+   <wingarea unit="M2">30.0</wingarea>
    <wingspan unit="M">10.00</wingspan>
-   <wing_incidence>3.00</wing_incidence>
+   <wing_incidence>1.00</wing_incidence>
    <chord unit="M">2.0</chord>
    <htailarea unit="M2">5.0</htailarea>
    <htailarm unit="M">5.0</htailarm>
    <vtailarea unit="M2">5.0</vtailarea>
    <vtailarm unit="M">5.0</vtailarm>
    <location name="AERORP" unit="M">
-     <x>-0.10</x>
+     <x> 0.85</x>
      <y> 0.00</y>
      <z> 0.00</z>
    </location>
@@ -43,7 +43,7 @@
    <izz unit="SLUG*FT2">1631</izz>
    <emptywt unit="LBS">25000</emptywt>
    <location name="CG" unit="M">
-     <x>-0.25</x>
+     <x> 0.90</x>
      <y> 0.00</y>
      <z> 0.00</z>
    </location>
@@ -84,8 +84,8 @@
        <y>-2.15</y>
        <z>-2.15</z>
      </location>
-     <static_friction>0.9</static_friction>
-     <dynamic_friction>0.01</dynamic_friction>
+     <static_friction>0.7</static_friction>
+     <dynamic_friction>0.02</dynamic_friction>
      <rolling_friction>0.002</rolling_friction>
      <spring_coeff unit="LBS/FT">25000.00</spring_coeff>
      <damping_coeff unit="LBS/FT/SEC">1000.00</damping_coeff>
@@ -100,8 +100,8 @@
        <y> 2.15</y>
        <z>-2.15</z>
      </location>
-     <static_friction>0.90</static_friction>
-     <dynamic_friction>0.01</dynamic_friction>
+     <static_friction>0.7</static_friction>
+     <dynamic_friction>0.02</dynamic_friction>
      <rolling_friction>0.002</rolling_friction>
      <spring_coeff unit="LBS/FT">25000.00</spring_coeff>
      <damping_coeff unit="LBS/FT/SEC">1000.00</damping_coeff>
@@ -294,11 +294,10 @@
            <independentVar lookup="row">aero/alpha-rad</independentVar>
            <tableData>
               -0.20 -0.650
-               0.00 -0.050
-               0.05  0.000
-               0.10  3.500
-               0.20  2.000
-               0.60  0.800
+               0.00  0.200
+               0.05  2.000
+               0.20  3.200
+               0.60  3.100
            </tableData>
          </table>
        </product>
@@ -340,7 +339,7 @@
               -0.26  0.300
                0.00  0.100
                0.26  0.400
-               1.57  3.000
+               1.57  2.500
            </tableData>
          </table>
        </product>
@@ -352,7 +351,7 @@
          <property>aero/qbar-psf</property>
          <property>metrics/Sw-sqft</property>
          <property>aero/cl-squared</property>
-         <value>0.1</value>
+         <value>0.06</value>
        </product>
      </function>
 
