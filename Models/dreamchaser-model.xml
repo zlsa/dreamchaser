@@ -2,7 +2,65 @@
 
 <PropertyList>
 
-  <!-- Export X/Y -->
+  <!-- Export +X/+Y -->
   <path>Models/dreamchaser.ac</path>
 
+  <!-- GEAR -->
+
+  <!-- nose -->
+  <animation>
+    <type>translate</type>
+    <object-name>nose wheel</object-name>
+    <property>gear/gear[0]/compression-ft</property>
+    <factor>0.28</factor>
+    <axis>
+      <x>0.0</x>
+      <y>0.0</y>
+      <z>1.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>nose wheel</object-name>
+    <factor>-20</factor>
+    <property>controls/flight/rudder</property>
+    <axis>
+      <x>0.0</x>
+      <y>0.0</y>
+      <z>1.0</z>
+    </axis>
+    <center>
+      <x-m>-3.18</x-m>
+      <y-m> 0.00</y-m>
+      <z-m>-1.64</z-m>
+    </center>
+  </animation>
+
+  <!-- left -->
+  <animation>
+    <type>translate</type>
+    <object-name>left wheel</object-name>
+    <property>gear/gear[1]/compression-ft</property>
+    <factor>0.28</factor>
+    <axis>
+      <x>0.0</x>
+      <y>0.0</y>
+      <z>1.0</z>
+    </axis>
+  </animation>
+  
+  <!-- right -->
+  <animation>
+    <type>translate</type>
+    <object-name>right wheel</object-name>
+    <property>gear/gear[2]/compression-ft</property>
+    <factor>0.28</factor>
+    <axis>
+      <x>0.0</x>
+      <y>0.0</y>
+      <z>1.0</z>
+    </axis>
+  </animation>
+  
 </PropertyList>

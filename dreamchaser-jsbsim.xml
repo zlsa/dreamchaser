@@ -66,19 +66,14 @@
      <location unit="M">
        <x>-3.18</x>
        <y> 0.00</y>
-       <z>-2.00</z>
+       <z>-2.15</z>
      </location>
-     <orientation unit="DEG">
-       <pitch>14</pitch>
-       <roll>0</roll>
-       <yaw>0</yaw>
-     </orientation>
-     <static_friction>0.80</static_friction>
-     <dynamic_friction>0.50</dynamic_friction>
-     <rolling_friction>0.01</rolling_friction>
-     <spring_coeff unit="LBS/FT">4000.00</spring_coeff>
-     <damping_coeff unit="LBS/FT/SEC">200.00</damping_coeff>
-     <max_steer unit="DEG">22.00</max_steer>
+     <static_friction>0.9</static_friction>
+     <dynamic_friction>0.01</dynamic_friction>
+     <rolling_friction>0.001</rolling_friction>
+     <spring_coeff unit="LBS/FT">22000.00</spring_coeff>
+     <damping_coeff unit="LBS/FT/SEC">800.00</damping_coeff>
+     <max_steer unit="DEG">20</max_steer>
      <brake_group>NONE</brake_group>
      <retractable>0</retractable>
    </contact>
@@ -87,13 +82,13 @@
      <location unit="M">
        <x> 1.36</x>
        <y>-2.15</y>
-       <z>-2.00</z>
+       <z>-2.15</z>
      </location>
-     <static_friction>0.80</static_friction>
-     <dynamic_friction>0.50</dynamic_friction>
-     <rolling_friction>0.01</rolling_friction>
-     <spring_coeff unit="LBS/FT">6000.00</spring_coeff>
-     <damping_coeff unit="LBS/FT/SEC">500.00</damping_coeff>
+     <static_friction>0.9</static_friction>
+     <dynamic_friction>0.01</dynamic_friction>
+     <rolling_friction>0.002</rolling_friction>
+     <spring_coeff unit="LBS/FT">25000.00</spring_coeff>
+     <damping_coeff unit="LBS/FT/SEC">1000.00</damping_coeff>
      <max_steer unit="DEG">0</max_steer>
      <brake_group>LEFT</brake_group>
      <retractable>0</retractable>
@@ -103,13 +98,13 @@
      <location unit="M">
        <x> 1.36</x>
        <y> 2.15</y>
-       <z>-2.00</z>
+       <z>-2.15</z>
      </location>
-     <static_friction>0.80</static_friction>
-     <dynamic_friction>0.50</dynamic_friction>
-     <rolling_friction>0.01</rolling_friction>
-     <spring_coeff unit="LBS/FT">6000.00</spring_coeff>
-     <damping_coeff unit="LBS/FT/SEC">500.00</damping_coeff>
+     <static_friction>0.90</static_friction>
+     <dynamic_friction>0.01</dynamic_friction>
+     <rolling_friction>0.002</rolling_friction>
+     <spring_coeff unit="LBS/FT">25000.00</spring_coeff>
+     <damping_coeff unit="LBS/FT/SEC">1000.00</damping_coeff>
      <max_steer unit="DEG">0</max_steer>
      <brake_group>RIGHT</brake_group>
      <retractable>0</retractable>
@@ -117,7 +112,7 @@
 
  </ground_reactions>
 
- <flight_control name="FCS: pa28-181">
+ <flight_control name="FCS: dreamchaser">
 
    <channel name="Pitch">
 
@@ -300,9 +295,9 @@
            <tableData>
               -0.20 -0.650
                0.00 -0.050
-               0.10  0.000
-               0.20  3.500
-               0.40  2.000
+               0.05  0.000
+               0.10  3.500
+               0.20  2.000
                0.60  0.800
            </tableData>
          </table>
@@ -342,10 +337,10 @@
            <independentVar lookup="row">aero/alpha-rad</independentVar>
            <tableData>
               -1.57  2.000
-              -0.26  0.080
-               0.00  0.050
-               0.26  0.080
-               1.57  2.000
+              -0.26  0.300
+               0.00  0.100
+               0.26  0.400
+               1.57  3.000
            </tableData>
          </table>
        </product>
@@ -459,7 +454,7 @@
          <property>metrics/Sw-sqft</property>
          <property>metrics/bw-ft</property>
          <property>fcs/left-aileron-pos-rad</property>
-         <value>0.10</value>
+         <value>0.20</value>
        </product>
      </function>
 
@@ -470,7 +465,7 @@
          <property>metrics/Sw-sqft</property>
          <property>metrics/bw-ft</property>
          <property>fcs/rudder-pos-rad</property>
-         <value>0.03</value>
+         <value>0.05</value>
        </product>
      </function>
 
@@ -564,7 +559,7 @@
          <property>metrics/Sw-sqft</property>
          <property>metrics/bw-ft</property>
          <property>fcs/rudder-pos-rad</property>
-         <value>-0.1</value>
+         <value>-0.05</value>
        </product>
      </function>
 
@@ -575,7 +570,7 @@
          <property>metrics/Sw-sqft</property>
          <property>metrics/bw-ft</property>
          <property>fcs/left-aileron-pos-rad</property>
-         <value>-0.01</value>
+         <value>-0.005</value>
        </product>
      </function>
 
